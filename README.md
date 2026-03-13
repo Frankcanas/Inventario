@@ -22,7 +22,7 @@ El código ejecuta los siguientes procesos de manera secuencial:
 
 4. Cálculo Aritmético: Aplica la fórmula:
  
-                                           $$Costo\ Total = Precio \times Cantidad$$
+                                           Costo_Total = Precio * Cantidad
 
 5. Generación de Reporte: Muestra en una sola línea formateada (f-string) todos los datos recolectados para una lectura rápida.
 
