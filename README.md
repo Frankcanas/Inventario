@@ -1,55 +1,50 @@
-# Sistema de Ingreso de Inventario (Python)
+# 📦 Sistema de Gestión de Inventario Avanzado
 
-Este es un script de consola diseñado para gestionar de manera segura la entrada de productos a un sistema de inventario. 
+Este proyecto es una aplicación de consola en **Python** diseñada para administrar el inventario de un negocio de manera eficiente. Permite realizar operaciones CRUD, calcular estadísticas críticas y mantener la persistencia de los datos mediante archivos CSV.
 
-El programa se enfoca en la integridad de los datos, obligando al usuario a ingresar valores numéricos válidos antes de proceder con los cálculos.
+---
 
-#  Función del Programa
+## 🛠️ Estructura del Proyecto
 
-La función principal es registrar un producto individual, capturando su nombre, precio unitario y stock disponible. 
-El script calcula automáticamente el valor total de la existencia (Precio × Cantidad) y presenta un resumen limpio al finalizar.
+El sistema está dividido en dos módulos principales para seguir las mejores prácticas de desarrollo (separación de lógica e interfaz):
 
-#  Funcionalidades y Procesos
+* **`funciones.py`**: Contiene toda la lógica de negocio, manipulación de la lista de diccionarios, cálculos de estadísticas y gestión de lectura/escritura del archivo CSV.
+* **`app.py`**: Es el punto de entrada del programa. Gestiona el menú interactivo, las entradas del usuario (`input`) y las validaciones de datos.
 
-El código ejecuta los siguientes procesos de manera secuencial:
+---
 
+## 🚀 Funcionalidades Principales
 
-1. Captura de Identidad: Solicita el nombre del producto (cadena de texto).
+1.  **Gestión Completa (CRUD):** * Agregar productos con nombre, precio y cantidad.
+    * Buscar productos por nombre.
+    * Actualizar stock y precios de productos existentes.
+    * Eliminar registros del sistema.
+2.  **Estadísticas de Negocio:**
+    * Cálculo automático de unidades totales en bodega.
+    * Valorización monetaria del inventario total ($Precio \times Cantidad$).
+    * Identificación del producto más caro y el de mayor existencia.
+3.  **Persistencia CSV (`inventario_total.csv`):**
+    * **Guardar:** Exporta el estado actual del inventario a un archivo compatible con Excel.
+    * **Cargar:** Importa datos externos con opción de **Sobrescribir** o **Fusionar** (suma cantidades y actualiza precios si el producto ya existe).
 
-2. Validación de Precio (Float): Implementa un bucle while que no permite avanzar hasta que se ingrese un número decimal válido. Maneja errores de tipo ValueError.
+---
 
-3. Validación de Cantidad (Int): Similar al proceso anterior, pero restringe la entrada exclusivamente a números enteros.
+## 📋 Requisitos y Ejecución
 
-4. Cálculo Aritmético: Aplica la fórmula:
- 
-                                           Costo_Total = Precio * Cantidad
+1.  Tener instalado **Python 3.x**.
+2.  Descargar `app.py` y `funciones.py` en la misma carpeta.
+3.  Ejecutar el comando:
+    ```bash
+    python app.py
+    ```
 
-5. Generación de Reporte: Muestra en una sola línea formateada (f-string) todos los datos recolectados para una lectura rápida.
+---
 
+## 📝 Notas de Implementación
 
-#  ¿Por dónde se puede correr?
+* **Validación de Datos:** El sistema utiliza bloques `try-except` para asegurar que el programa no se cierre si el usuario ingresa datos erróneos o valores negativos.
+* **Modularidad:** Las funciones están documentadas con *docstrings* y utilizan tipos de datos compuestos (listas de diccionarios).
+* **Eficiencia:** Se emplea el módulo nativo `csv` de Python para garantizar un manejo limpio de los registros.
 
-Al ser un script de Python estándar (.py), puedes ejecutarlo en:
-
-    •  IDEs de Desarrollo: Visual Studio Code, PyCharm o Spyder 
-  
-    • Entornos Interactivos: Jupyter Notebook o Google Colab.
-  
-    • Terminal/Consola: Cualquier terminal de Windows (CMD/PowerShell), macOS o Linux que tenga Python instalado.
-  
-  #  Cómo correr el código 
-  
-  Sigue estos pasos para probar el script en tu máquina local:
-  
-  1. Instalar Python: Asegúrate de tener instalada una versión de Python 3.x.
-  
-  2. Preparar el archivo: Copia el código y guárdalo en un archivo llamado inventario.py.
-  
-  # Ejecución desde la terminal: 
-  Abre tu terminal o consola de comandos.
-  Navega hasta la carpeta donde guardaste el archivo.
-  Escribe el siguiente comando y presiona Enter:
-
-  ``` python
-  python inventario.py
-  ```
+---
+Generado para el proyecto de Inventario - Marzo 2026
