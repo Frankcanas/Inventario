@@ -9,7 +9,7 @@ Este proyecto es una aplicación de consola en **Python** diseñada para adminis
 El sistema está dividido en dos módulos principales para seguir las mejores prácticas de desarrollo (separación de lógica e interfaz):
 
 * **`funciones.py`**: Contiene toda la lógica de negocio, manipulación de la lista de diccionarios, cálculos de estadísticas y gestión de lectura/escritura del archivo CSV.
-* **`app.py`**: Es el punto de entrada del programa. Gestiona el menú interactivo, las entradas del usuario (`input`) y las validaciones de datos.
+* **`main.py`**: Es el punto de entrada del programa. Gestiona el menú interactivo, las entradas del usuario (`input`) y las validaciones de datos.
 
 ---
 
